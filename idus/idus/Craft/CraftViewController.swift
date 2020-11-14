@@ -41,10 +41,10 @@ class CraftViewController: UIViewController {
 
 extension CraftViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: (collectionView.frame.size.width/2-10), height: 500)
+        CGSize(width: (collectionView.frame.size.width/2-16), height: 300)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
     
     
@@ -57,15 +57,16 @@ extension CraftViewController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath)as? ProductCell else { return UICollectionViewCell()}
 
-        cell.setfImage(imageName: product[indexPath.item])
+        cell.setfImage(imageName: imageName[indexPath.item])
         cell.rankLabel.text = "1"
         cell.cateLabel.text = category[indexPath.item]
         cell.nameLabel.text = product[indexPath.item]
+        cell.nameLabel.lineBreakMode = .byTruncatingTail
         cell.sellerLabel.text = seller[indexPath.item]
         cell.discountLabel.text = String(discount[indexPath.item]) + "%"
         cell.priceLabel.text = String(price[indexPath.item]) + "원"
         return cell
     }
     
-    
 }
+
