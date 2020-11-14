@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372FDEA125603153003FB18C /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372FDEA025603153003FB18C /* ProductCell.swift */; };
 		D4343AFE255FC498000AA48B /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4343AFD255FC498000AA48B /* ClassViewController.swift */; };
 		D4343B01255FC4A0000AA48B /* CraftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4343B00255FC4A0000AA48B /* CraftViewController.swift */; };
 		D4343B04255FC4A6000AA48B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4343B03255FC4A6000AA48B /* SearchViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372FDEA025603153003FB18C /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		D4343AFD255FC498000AA48B /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		D4343B00255FC4A0000AA48B /* CraftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftViewController.swift; sourceTree = "<group>"; };
 		D4343B03255FC4A6000AA48B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				D49927DC255FC645000BA55F /* Craft.storyboard */,
 				D4343B00255FC4A0000AA48B /* CraftViewController.swift */,
+				372FDEA025603153003FB18C /* ProductCell.swift */,
 			);
 			path = Craft;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				D49927EE255FC810000BA55F /* UIColor.swift in Sources */,
 				D45B4E74255FC12900D19EB7 /* AppDelegate.swift in Sources */,
 				D45B4E76255FC12900D19EB7 /* SceneDelegate.swift in Sources */,
+				372FDEA125603153003FB18C /* ProductCell.swift in Sources */,
 				D4343B01255FC4A0000AA48B /* CraftViewController.swift in Sources */,
 				D4343B0A255FC4B5000AA48B /* MyPageViewController.swift in Sources */,
 			);
