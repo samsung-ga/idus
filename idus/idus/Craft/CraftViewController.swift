@@ -18,8 +18,10 @@ class CraftViewController: UIViewController {
     var rank : [Int] = [1,2,3,4,5,6]
  
     @IBOutlet weak var mainScrollView: UIScrollView!
-    //@IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var idusCollectionView: UICollectionView!
+    
+    @IBOutlet weak var upperBtnSet: UIStackView!
     
     //upper Btn Set
     @IBOutlet weak var homeBtn: UIButton!
@@ -49,17 +51,13 @@ class CraftViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         setHeight()
         setBtns()
+        setProportion()
     }
     
     func setHeight() {
-//        collectionViewHeight.constant =
-//            idusCollectionView.contentSize.height
-
-        idusCollectionView.contentSize.height
-            = CGFloat(Float(300 * (product.count/2)))
-        //어떻게 이게 되게 하지
+        //collectionViewHeight?.constant = CGFloat(Float(300 * (product.count/2)))
+        collectionViewHeight?.constant = idusCollectionView.contentSize.height
     }
-
     func setBtns() {
         //upper Btn set
         homeBtn.setTitleColor(UIColor(named: "reddish"), for: .normal)
@@ -67,6 +65,8 @@ class CraftViewController: UIViewController {
         videoBtn.setTitleColor(UIColor(named: "cloudyBlue"), for: .normal)
         popMakerBtn.setTitleColor(UIColor(named: "cloudyBlue"), for: .normal)
         
+        homeBtn.setTitle("홈", for: .normal)
+        homeBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         homeBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoB00", size: 17)
         StoryBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoM00", size: 17)
         videoBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoM00", size: 17)
@@ -78,10 +78,10 @@ class CraftViewController: UIViewController {
         popMakerView.backgroundColor = UIColor(named: "White")
         
         //center Btn set
-        popCraftBtn.layer.cornerRadius = 39
-        lastestBtn.layer.cornerRadius = 39
-        popReviewBtn.layer.cornerRadius = 39
-        recomMakerBtn.layer.cornerRadius = 39
+        popCraftBtn.layer.cornerRadius = 15
+        lastestBtn.layer.cornerRadius = 15
+        popReviewBtn.layer.cornerRadius = 15
+        recomMakerBtn.layer.cornerRadius = 15
         
         popCraftBtn.backgroundColor = UIColor(named: "melon")
         lastestBtn.backgroundColor = UIColor(named: "white")
@@ -94,12 +94,14 @@ class CraftViewController: UIViewController {
         recomMakerBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoR00", size: 14)
         
         popCraftBtn.setTitleColor(UIColor(named: "white"), for: .normal)
-        lastestBtn.setTitleColor(UIColor(named: "Black"), for: .normal)
-        popReviewBtn.setTitleColor(UIColor(named: "Black"), for: .normal)
-        recomMakerBtn.setTitleColor(UIColor(named: "Black"), for: .normal)
-        
-        
+        lastestBtn.setTitleColor(UIColor.black, for: .normal)
+        popReviewBtn.setTitleColor(UIColor.black, for: .normal)
+        recomMakerBtn.setTitleColor(UIColor.black, for: .normal)
 
+    }
+    
+    func setProportion() {
+        //homeBtn.frame = CGRect(x: 20, y:90, width: (61/355) * upperBtnSet.frame.width, height: upperBtnSet.frame.height)
     }
     @IBAction func homeBtnTouch(_ sender: Any) {
         homeView.backgroundColor = UIColor(named: "reddish")
@@ -182,10 +184,11 @@ class CraftViewController: UIViewController {
         popReviewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoR00", size: 14)
         recomMakerBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoR00", size: 14)
         
-        popCraftBtn.titleLabel?.textColor = UIColor(named: "white")
-        lastestBtn.titleLabel?.textColor = UIColor(named: "Black")
-        popReviewBtn.titleLabel?.textColor = UIColor(named: "Black")
-        recomMakerBtn.titleLabel?.textColor = UIColor(named: "Black")
+        
+        popCraftBtn.setTitleColor(UIColor(named: "white"), for: .normal)
+        lastestBtn.setTitleColor(UIColor.black, for: .normal)
+        popReviewBtn.setTitleColor(UIColor.black, for: .normal)
+        recomMakerBtn.setTitleColor(UIColor.black, for: .normal)
         
     }
     @IBAction func lastestBtnTouch(_ sender: Any) {
@@ -199,10 +202,10 @@ class CraftViewController: UIViewController {
         popReviewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoR00", size: 14)
         recomMakerBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoR00", size: 14)
     
-        popCraftBtn.setTitleColor(UIColor(named: "Black"), for: .normal)
+        popCraftBtn.setTitleColor(UIColor.black, for: .normal)
         lastestBtn.setTitleColor(UIColor(named: "white"), for: .normal)
-        popReviewBtn.setTitleColor(UIColor(named: "Black"), for: .normal)
-        recomMakerBtn.setTitleColor(UIColor(named: "Black"), for: .normal)
+        popReviewBtn.setTitleColor(UIColor.black, for: .normal)
+        recomMakerBtn.setTitleColor(UIColor.black, for: .normal)
     }
     
     @IBAction func popReviewBtnTouch(_ sender: Any) {
@@ -216,10 +219,10 @@ class CraftViewController: UIViewController {
         popReviewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoB00", size: 14)
         recomMakerBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoR00", size: 14)
         
-        popCraftBtn.setTitleColor(UIColor(named: "Black"), for: .normal)
-        lastestBtn.setTitleColor(UIColor(named: "Black"), for: .normal)
+        popCraftBtn.setTitleColor(UIColor.black, for: .normal)
+        lastestBtn.setTitleColor(UIColor.black, for: .normal)
         popReviewBtn.setTitleColor(UIColor(named: "white"), for: .normal)
-        recomMakerBtn.setTitleColor(UIColor(named: "Black"), for: .normal)
+        recomMakerBtn.setTitleColor(UIColor.black, for: .normal)
     }
     
     @IBAction func recomMakerBtnTouch(_ sender: Any) {
@@ -233,9 +236,9 @@ class CraftViewController: UIViewController {
         popReviewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoR00", size: 14)
         recomMakerBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoB00", size: 14)
         
-        popCraftBtn.setTitleColor(UIColor(named: "Black"), for: .normal)
-        lastestBtn.setTitleColor(UIColor(named: "Black"), for: .normal)
-        popReviewBtn.setTitleColor(UIColor(named: "Black"), for: .normal)
+        popCraftBtn.setTitleColor(UIColor.black, for: .normal)
+        lastestBtn.setTitleColor(UIColor.black, for: .normal)
+        popReviewBtn.setTitleColor(UIColor.black, for: .normal)
         recomMakerBtn.setTitleColor(UIColor(named: "white"), for: .normal)
     }
 }

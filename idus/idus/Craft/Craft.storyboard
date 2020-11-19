@@ -9,6 +9,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeoB.ttf">
+            <string>AppleSDGothicNeoB00</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Craft View Controller-->
         <scene sceneID="Ka5-FE-oaP">
@@ -60,6 +65,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3U-mt-XmZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="93.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeoB00" family="AppleSDGothicNeoB00" pointSize="17"/>
                                                 <state key="normal" title="홈"/>
                                                 <connections>
                                                     <action selector="homeBtnTouch:" destination="GSg-ez-6D7" eventType="touchUpInside" id="O7a-mB-apy"/>
@@ -67,6 +73,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqN-SQ-BxU">
                                                 <rect key="frame" x="93.5" y="0.0" width="93.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                                 <state key="normal" title="스토리"/>
                                                 <connections>
                                                     <action selector="storyBtnTouch:" destination="GSg-ez-6D7" eventType="touchUpInside" id="Gfj-kI-SMc"/>
@@ -74,6 +81,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ix-HH-2ZY">
                                                 <rect key="frame" x="187" y="0.0" width="93.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                                 <state key="normal" title="동영상"/>
                                                 <connections>
                                                     <action selector="videoBtnView:" destination="GSg-ez-6D7" eventType="touchUpInside" id="A7f-7P-Q9m"/>
@@ -81,6 +89,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ann-wR-zUj">
                                                 <rect key="frame" x="280.5" y="0.0" width="93.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                                 <state key="normal" title="인기작가"/>
                                                 <connections>
                                                     <action selector="popMakerBtnView:" destination="GSg-ez-6D7" eventType="touchUpInside" id="Luc-NQ-diU"/>
@@ -404,6 +413,7 @@
                         <outlet property="popReviewBtn" destination="dkg-Hx-OXi" id="EGp-V3-DgG"/>
                         <outlet property="recomMakerBtn" destination="LHf-Ys-VDu" id="dCR-S7-7W2"/>
                         <outlet property="storyView" destination="Lpi-LG-6ph" id="tvT-bM-vXN"/>
+                        <outlet property="upperBtnSet" destination="6qT-Xk-t8A" id="oAn-tY-nQn"/>
                         <outlet property="videoBtn" destination="7Ix-HH-2ZY" id="rE4-VC-Yg4"/>
                         <outlet property="videoView" destination="Dfc-ne-fWM" id="j7M-21-YXg"/>
                     </connections>
