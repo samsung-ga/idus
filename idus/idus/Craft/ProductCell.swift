@@ -8,6 +8,7 @@
 import UIKit
 
 class ProductCell: UICollectionViewCell {
+    
     static let identifier = "ProductCell"
     
     @IBOutlet weak var proImageView: UIImageView!
@@ -19,7 +20,7 @@ class ProductCell: UICollectionViewCell {
     @IBOutlet weak var discountLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    func setfImage(imageName: String){
+    func setImage(imageName: String){
         proImageView.image = UIImage(named: imageName)
     }
     
