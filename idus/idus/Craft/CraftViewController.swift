@@ -58,6 +58,7 @@ class CraftViewController: UIViewController {
         //collectionViewHeight?.constant = CGFloat(Float(300 * (product.count/2)))
         collectionViewHeight?.constant = idusCollectionView.contentSize.height
     }
+
     func setBtns() {
         //upper Btn set
         homeBtn.setTitleColor(UIColor(named: "reddish"), for: .normal)
@@ -248,7 +249,7 @@ class CraftViewController: UIViewController {
 
 extension CraftViewController:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: (collectionView.frame.size.width/2-16), height: 300)
+        CGSize(width: (collectionView.frame.size.width/2-16), height: 320)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -266,9 +267,13 @@ extension CraftViewController:UICollectionViewDataSource{
             return UICollectionViewCell() }
         
                 cell.setImage(imageName: imageName[indexPath.item])
+                cell.setNumberofLines()
                 cell.rankLabel.text = String(rank[indexPath.item])
                 cell.cateLabel.text = category[indexPath.item]
                 cell.cateLabel.layer.cornerRadius = 5
+                cell.nameLabel.lineBreakMode = .byWordWrapping
+                cell.nameLabel.numberOfLines = 2
+        
                 if cell.cateLabel.text == category[0]{
                     cell.cateLabel.backgroundColor = UIColor(named: "lightLavender")
                 } else if cell.cateLabel.text == category[1]{
@@ -282,5 +287,7 @@ extension CraftViewController:UICollectionViewDataSource{
                 cell.sellerLabel.text = seller[indexPath.item]
                 cell.discountLabel.text = String(discount[indexPath.item]) + "%"
                 cell.priceLabel.text = String(price[indexPath.item]) + "원"
-        return cell}
+        return cell
+        
+    }
 }

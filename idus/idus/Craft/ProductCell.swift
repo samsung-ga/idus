@@ -24,4 +24,8 @@ class ProductCell: UICollectionViewCell {
         proImageView.image = UIImage(named: imageName)
     }
     
+    func setNumberofLines() {
+        nameLabel.numberOfLines = 2
+    }
+    
 }
