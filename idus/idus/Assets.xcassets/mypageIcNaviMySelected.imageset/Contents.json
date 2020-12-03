@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "mainIcNaviProductSelected.png",
+      "filename" : "mypageIcNaviMySelected.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "mainIcNaviProductSelected@2x.png",
+      "filename" : "mypageIcNaviMySelected@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "mainIcNaviProductSelected@3x.png",
+      "filename" : "mypageIcNaviMySelected@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
