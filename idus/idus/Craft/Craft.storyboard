@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Craft View Controller-->
+        <!--작품-->
         <scene sceneID="Ka5-FE-oaP">
             <objects>
                 <viewController id="GSg-ez-6D7" customClass="CraftViewController" customModule="idus" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,7 +135,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9x-xS-PeS">
-                                <rect key="frame" x="0.0" y="134" width="414" height="728"/>
+                                <rect key="frame" x="0.0" y="134" width="414" height="679"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ps-Tf-WOW">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1402"/>
@@ -402,6 +402,8 @@
                             <constraint firstItem="Vis-s1-0nT" firstAttribute="leading" secondItem="2tw-Mn-FJQ" secondAttribute="leading" id="ypQ-dt-C58"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="작품" image="classIcNaviProduct" selectedImage="mainIcNaviProductSelected" id="mIo-d7-8SP"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="StoryBtn" destination="tqN-SQ-BxU" id="GoJ-TI-ZaJ"/>
                         <outlet property="homeBtn" destination="k3U-mt-XmZ" id="EBo-Gc-ztC"/>
@@ -426,10 +428,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="classIcNaviProduct" width="19" height="19"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="mainBtnLikeFilled" width="19" height="18"/>
         <image name="mainBtnLogo" width="55" height="38"/>
         <image name="mainDivBanner" width="375" height="300"/>
+        <image name="mainIcNaviProductSelected" width="19" height="19"/>
         <image name="mainIcOrderRank" width="46" height="46"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
