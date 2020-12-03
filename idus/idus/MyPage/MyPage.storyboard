@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--내정보-->
         <scene sceneID="FHC-VO-cNW">
             <objects>
                 <viewController id="2gT-CG-20T" customClass="MyPageViewController" customModule="idus" customModuleProvider="target" sceneMemberID="viewController">
@@ -319,7 +319,7 @@
                             <constraint firstItem="IJf-L0-e8m" firstAttribute="bottom" secondItem="HoF-uh-dYd" secondAttribute="bottom" constant="16" id="sB1-s3-K94"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qxT-7B-ycr"/>
+                    <tabBarItem key="tabBarItem" title="내정보" image="mainIcNaviMy" selectedImage="mypageIcNaviMySelected" id="qxT-7B-ycr"/>
                     <connections>
                         <outlet property="backgroundImageViewHeight" destination="tnf-55-pgQ" id="fKO-Mf-Ggu"/>
                         <outlet property="backgroundView" destination="xgD-8f-4ia" id="HlI-oc-np4"/>
@@ -342,6 +342,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mainIcNaviMy" width="19" height="19"/>
         <image name="mypageBtnChat" width="185" height="112"/>
         <image name="mypageBtnGift" width="70" height="66"/>
         <image name="mypageBtnLike" width="185" height="112"/>
@@ -350,6 +351,7 @@
         <image name="mypageBtnReview" width="70" height="66"/>
         <image name="mypageBtnSeller" width="185" height="112"/>
         <image name="mypageBtnVip" width="70" height="66"/>
+        <image name="mypageIcNaviMySelected" width="19" height="19"/>
         <image name="mypageImgLevel" width="33" height="33"/>
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
