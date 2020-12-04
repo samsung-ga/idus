@@ -15,6 +15,7 @@
 		3795B3FA2566407C00E3715B /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3795B3F32566407B00E3715B /* AppleSDGothicNeoEB.ttf */; };
 		3795B3FB2566407C00E3715B /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3795B3F42566407C00E3715B /* AppleSDGothicNeoB.ttf */; };
 		3795B3FC2566407C00E3715B /* AppleSDGothicNeoUL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3795B3F52566407C00E3715B /* AppleSDGothicNeoUL.ttf */; };
+		43C9692299B419CB8BFC2311 /* Pods_idus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B049B87BFC8B180EF4A3DBD /* Pods_idus.framework */; };
 		D4343AFE255FC498000AA48B /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4343AFD255FC498000AA48B /* ClassViewController.swift */; };
 		D4343B01255FC4A0000AA48B /* CraftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4343B00255FC4A0000AA48B /* CraftViewController.swift */; };
 		D4343B04255FC4A6000AA48B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4343B03255FC4A6000AA48B /* SearchViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		139730FDD1AB43BD748FCC60 /* Pods-idus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-idus.release.xcconfig"; path = "Target Support Files/Pods-idus/Pods-idus.release.xcconfig"; sourceTree = "<group>"; };
 		372FDEA025603153003FB18C /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		3795B3EF2566407A00E3715B /* AppleSDGothicNeoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoM.ttf; sourceTree = "<group>"; };
 		3795B3F02566407A00E3715B /* AppleSDGothicNeoH.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoH.ttf; sourceTree = "<group>"; };
@@ -43,6 +45,8 @@
 		3795B3F32566407B00E3715B /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
 		3795B3F42566407C00E3715B /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoB.ttf; sourceTree = "<group>"; };
 		3795B3F52566407C00E3715B /* AppleSDGothicNeoUL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoUL.ttf; sourceTree = "<group>"; };
+		3B049B87BFC8B180EF4A3DBD /* Pods_idus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_idus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98B341C3139C5E0B6D125746 /* Pods-idus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-idus.debug.xcconfig"; path = "Target Support Files/Pods-idus/Pods-idus.debug.xcconfig"; sourceTree = "<group>"; };
 		D4343AFD255FC498000AA48B /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		D4343B00255FC4A0000AA48B /* CraftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftViewController.swift; sourceTree = "<group>"; };
 		D4343B03255FC4A6000AA48B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -69,12 +73,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43C9692299B419CB8BFC2311 /* Pods_idus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FF3502696EC24377E9CBD2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B049B87BFC8B180EF4A3DBD /* Pods_idus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64FB907FF1D45B8A57374FCF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98B341C3139C5E0B6D125746 /* Pods-idus.debug.xcconfig */,
+				139730FDD1AB43BD748FCC60 /* Pods-idus.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D4343AF3255FC41F000AA48B /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +156,8 @@
 				3795B3F52566407C00E3715B /* AppleSDGothicNeoUL.ttf */,
 				D45B4E72255FC12900D19EB7 /* idus */,
 				D45B4E71255FC12900D19EB7 /* Products */,
+				64FB907FF1D45B8A57374FCF /* Pods */,
+				0FF3502696EC24377E9CBD2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,6 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D45B4E84255FC12A00D19EB7 /* Build configuration list for PBXNativeTarget "idus" */;
 			buildPhases = (
+				3532908B90C27B01ADA43A59 /* [CP] Check Pods Manifest.lock */,
 				D45B4E6C255FC12900D19EB7 /* Sources */,
 				D45B4E6D255FC12900D19EB7 /* Frameworks */,
 				D45B4E6E255FC12900D19EB7 /* Resources */,
@@ -248,6 +274,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3532908B90C27B01ADA43A59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-idus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D45B4E6C255FC12900D19EB7 /* Sources */ = {
@@ -407,6 +458,7 @@
 		};
 		D45B4E85255FC12A00D19EB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98B341C3139C5E0B6D125746 /* Pods-idus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -427,6 +479,7 @@
 		};
 		D45B4E86255FC12A00D19EB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 139730FDD1AB43BD748FCC60 /* Pods-idus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
