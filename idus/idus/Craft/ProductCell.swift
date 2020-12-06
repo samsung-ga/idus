@@ -8,9 +8,9 @@
 import UIKit
 
 class ProductCell: UICollectionViewCell {
-    
+
     static let identifier = "ProductCell"
-    
+
     @IBOutlet weak var proImageView: UIImageView!
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var starBtn: UIButton!
@@ -19,13 +19,13 @@ class ProductCell: UICollectionViewCell {
     @IBOutlet weak var sellerLabel: UILabel!
     @IBOutlet weak var discountLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    
-    func setImage(imageName: String){
+
+    func setImage(imageName: String) {
         proImageView.image = UIImage(named: imageName)
     }
-    
+
     func setNumberofLines() {
         nameLabel.numberOfLines = 2
     }
-    
+
 }
