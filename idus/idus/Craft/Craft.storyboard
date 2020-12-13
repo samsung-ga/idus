@@ -140,7 +140,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ps-Tf-WOW">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1402"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainDivBanner" translatesAutoresizingMaskIntoConstraints="NO" id="UIb-as-AH0">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UIb-as-AH0">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="331"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="UIb-as-AH0" secondAttribute="height" multiplier="375:300" id="RJv-ls-iM1"/>
@@ -406,6 +406,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="StoryBtn" destination="tqN-SQ-BxU" id="GoJ-TI-ZaJ"/>
+                        <outlet property="bannerImageView" destination="UIb-as-AH0" id="Jwc-Fh-Jpd"/>
                         <outlet property="homeBtn" destination="k3U-mt-XmZ" id="EBo-Gc-ztC"/>
                         <outlet property="homeView" destination="WfL-zk-YM2" id="29g-QI-3EM"/>
                         <outlet property="idusCollectionView" destination="Qa4-gD-DKT" id="eme-je-jus"/>
@@ -432,7 +433,6 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="mainBtnLikeFilled" width="19" height="18"/>
         <image name="mainBtnLogo" width="55" height="38"/>
-        <image name="mainDivBanner" width="375" height="300"/>
         <image name="mainIcNaviProductSelected" width="19" height="19"/>
         <image name="mainIcOrderRank" width="46" height="46"/>
         <image name="star" catalog="system" width="128" height="116"/>
