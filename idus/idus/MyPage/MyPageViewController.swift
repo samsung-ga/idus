@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIView {
-    
+
     // 원하는 view 둥글게 만들기
     func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
@@ -19,7 +19,7 @@ extension UIView {
 }
 
 class MyPageViewController: UIViewController {
-    
+
     // UIViewComponets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var backgroundView: UIImageView!
@@ -34,53 +34,53 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var floatingButton: UIButton!
-    
+
     // statics
     let titles: [String] = ["친구초대", "이벤트", "공지사항", "고객센터", "About idus"]
     let backgroundViewHeight: CGFloat = 249.0
     let backgroundViewMinHeight: CGFloat = 210.0
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-     
+
         setTableViewHeight()
     }
-    
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
+
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
 //        self.scrollView.contentInsetAdjustmentBehavior = .never
         layoutsubviews()
     }
-    
+
     func layoutsubviews() {
         containerView.roundCorners(corners: [.topLeft, .topRight], radius: 50)
-        
+
         backgroundView.image = UIImage(named: "mypageBgRed")
         bannerView.image = UIImage(named: "mypageImgAd")
         profileImageView.image = UIImage.init(named: "mypageImgProfile")
         floatingButton.setImage(UIImage(named: "mainBtnCart"), for: .normal)
-        
+
         highlightView.backgroundColor = UIColor(named: "paleSalmon")
-        
+
         stackView.layer.cornerRadius = 30
         badgeView.layer.cornerRadius = 15
         profileView.layer.cornerRadius = profileView.frame.height / 2
         profileView.layer.borderWidth = 3
         profileView.layer.borderColor = UIColor.init(named: "paleSalmon")?.cgColor
-        
+
     }
-    
+
     func setTableViewHeight() {
         tableViewHeight?.constant = tableView.contentSize.height
-        
+
     }
-    
+
 }
 
 extension MyPageViewController: UITableViewDataSource {
@@ -102,7 +102,7 @@ extension MyPageViewController: UITableViewDelegate {
 }
 
 extension MyPageViewController: UIScrollViewDelegate {
-   
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = self.scrollView.contentOffset.y
         if offset < 0.0 {
@@ -114,7 +114,7 @@ extension MyPageViewController: UIScrollViewDelegate {
             height = height > backgroundViewMinHeight ? height : backgroundViewHeight
             backgroundImageViewHeight.constant = height
         }
-        
+
     }
-    
+
 }

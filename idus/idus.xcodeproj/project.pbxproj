@@ -35,6 +35,7 @@
 		D45B4E7B255FC12900D19EB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45B4E79255FC12900D19EB7 /* Main.storyboard */; };
 		D45B4E7D255FC12A00D19EB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45B4E7C255FC12A00D19EB7 /* Assets.xcassets */; };
 		D45B4E80255FC12A00D19EB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45B4E7E255FC12A00D19EB7 /* LaunchScreen.storyboard */; };
+		D493CAB2257CE31A008AD89E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D493CAB1257CE31A008AD89E /* .swiftlint.yml */; };
 		D49927DD255FC645000BA55F /* Craft.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D49927DC255FC645000BA55F /* Craft.storyboard */; };
 		D49927E0255FC64C000BA55F /* Class.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D49927DF255FC64C000BA55F /* Class.storyboard */; };
 		D49927E3255FC651000BA55F /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D49927E2255FC651000BA55F /* Category.storyboard */; };
@@ -76,6 +77,7 @@
 		D45B4E7C255FC12A00D19EB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D45B4E7F255FC12A00D19EB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D45B4E81255FC12A00D19EB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D493CAB1257CE31A008AD89E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D49927DC255FC645000BA55F /* Craft.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Craft.storyboard; sourceTree = "<group>"; };
 		D49927DF255FC64C000BA55F /* Class.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Class.storyboard; sourceTree = "<group>"; };
 		D49927E2255FC651000BA55F /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
@@ -177,8 +179,10 @@
 		D45B4E67255FC12900D19EB7 = {
 			isa = PBXGroup;
 			children = (
-				371C0A0E257B98F300867455 /* API */,
-				D45B4E72255FC12900D19EB7 /* idus */,
+
+        371C0A0E257B98F300867455 /* API */,
+				D493CAB1257CE31A008AD89E /* .swiftlint.yml */,
+        D45B4E72255FC12900D19EB7 /* idus */,
 				D45B4E71255FC12900D19EB7 /* Products */,
 				64FB907FF1D45B8A57374FCF /* Pods */,
 				0FF3502696EC24377E9CBD2E /* Frameworks */,
@@ -256,6 +260,7 @@
 				D45B4E6D255FC12900D19EB7 /* Frameworks */,
 				D45B4E6E255FC12900D19EB7 /* Resources */,
 				A270817C2D3E0A50EC888163 /* [CP] Embed Pods Frameworks */,
+				D493CAAF257CE2C1008AD89E /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -303,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D493CAB2257CE31A008AD89E /* .swiftlint.yml in Resources */,
 				3795B3F62566407C00E3715B /* AppleSDGothicNeoM.ttf in Resources */,
 				3795B3F72566407C00E3715B /* AppleSDGothicNeoH.ttf in Resources */,
 				3795B3F82566407C00E3715B /* AppleSDGothicNeoR.ttf in Resources */,
@@ -362,6 +368,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-idus/Pods-idus-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D493CAAF257CE2C1008AD89E /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 

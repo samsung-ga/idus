@@ -9,5 +9,5 @@ import UIKit
 
 class BigImageCell: UICollectionViewCell {
     static let identifier = "BigImageCell"
-    
+
 }
