@@ -19,6 +19,7 @@ extension UIView {
 }
 
 class MyPageViewController: UIViewController {
+    var ProfileDataModel: ProfileData?
 
     // UIViewComponets
     @IBOutlet weak var scrollView: UIScrollView!
@@ -53,7 +54,7 @@ class MyPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getProfile()
 //        self.scrollView.contentInsetAdjustmentBehavior = .never
         layoutsubviews()
     }
@@ -118,3 +119,35 @@ extension MyPageViewController: UIScrollViewDelegate {
     }
 
 }
+
+extension MyPageViewController {
+    
+    func getProfile() {
+//        ProfileService.shared.getProfile()
+//        {
+//            (networkResult) -> (Void) in
+//                switch networkResult {
+//                case .success(let data):
+//                    let response = data as? ProfileData
+//                    self.ProfileDataModel = response
+//                    self.viewWillAppear(true)
+//                    print("========================================")
+//                    print(self.ProfileDataModel?.data)
+//
+//                case .requestErr:
+//                    print("requestErr")
+//                case .pathErr:
+//                    print("pathErr")
+//                case .serverErr:
+//                    print("serverErr")
+//                case .networkFail:
+//                    print("networkFail")
+//                }
+//                }
+            }
+        }
+    
+
+
+
+

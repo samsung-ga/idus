@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0630EB8D25892A9600BDE392 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0630EB8C25892A9600BDE392 /* ProfileService.swift */; };
 		371C0A11257B991600867455 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C0A10257B991600867455 /* APIConstants.swift */; };
 		371C0A15257B99D800867455 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C0A14257B99D800867455 /* GenericResponse.swift */; };
 		371C0A18257B9A4800867455 /* bannerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C0A17257B9A4800867455 /* bannerData.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0630EB8C25892A9600BDE392 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		139730FDD1AB43BD748FCC60 /* Pods-idus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-idus.release.xcconfig"; path = "Target Support Files/Pods-idus/Pods-idus.release.xcconfig"; sourceTree = "<group>"; };
 		371C0A10257B991600867455 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		371C0A14257B99D800867455 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				371C0A24257B9C1700867455 /* NetworkResult.swift */,
 				377D2591257D4574004AC314 /* BannerService.swift */,
 				377D2594257D492F004AC314 /* ProductService.swift */,
+				0630EB8C25892A9600BDE392 /* ProfileService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -179,10 +182,9 @@
 		D45B4E67255FC12900D19EB7 = {
 			isa = PBXGroup;
 			children = (
-
-        371C0A0E257B98F300867455 /* API */,
+				371C0A0E257B98F300867455 /* API */,
 				D493CAB1257CE31A008AD89E /* .swiftlint.yml */,
-        D45B4E72255FC12900D19EB7 /* idus */,
+				D45B4E72255FC12900D19EB7 /* idus */,
 				D45B4E71255FC12900D19EB7 /* Products */,
 				64FB907FF1D45B8A57374FCF /* Pods */,
 				0FF3502696EC24377E9CBD2E /* Frameworks */,
@@ -409,6 +411,7 @@
 				D49927EE255FC810000BA55F /* UIColor.swift in Sources */,
 				371C0A18257B9A4800867455 /* bannerData.swift in Sources */,
 				D45B4E74255FC12900D19EB7 /* AppDelegate.swift in Sources */,
+				0630EB8D25892A9600BDE392 /* ProfileService.swift in Sources */,
 				D45B4E76255FC12900D19EB7 /* SceneDelegate.swift in Sources */,
 				372FDEA125603153003FB18C /* ProductCell.swift in Sources */,
 				D4343B01255FC4A0000AA48B /* CraftViewController.swift in Sources */,
