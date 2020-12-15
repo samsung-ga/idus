@@ -8,7 +8,7 @@
 import Foundation
 
 struct APIConstants {
-static let baseURL = "http://ec2-15-165-153-48.ap-northeast-2.compute.amazonaws.com:3000"
+static let baseURL = "http://52.78.180.125:3000"
 // 홈 배너 이미지 가져오기
 static let bannerURL = baseURL + "/home/banner"
 // 홈 상품 리스트 가져오기
