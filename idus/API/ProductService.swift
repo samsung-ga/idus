@@ -7,7 +7,7 @@
 
 import Foundation
 import Alamofire
-
+//왜 push가 안되나~~~
 struct ProductService{
     static let shared = ProductService()
     static var productDataData = ""
