@@ -24,8 +24,9 @@ struct ProductService{
                 guard let data = response.value else {
                     return
                 }
-                print(parsingProduct(status: statusCode, data: data)) // 데이터를 다 못받아와서그러나
-                craft.setProduct()
+                parsingProduct(status: statusCode, data: data)
+                print("didi",parsingProduct(status: statusCode, data: data)) // 데이터를 다 못받아와서그러나
+                
             case .failure(let err):
                 print("통신실패")
                 print(err)
@@ -35,12 +36,12 @@ struct ProductService{
     }
     private func parsingProduct(status: Int, data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<productData>.self, from: data) else {
+        guard let decodedData = try? decoder.decode(ProductData.self, from: data) else {
             return .pathErr}
         switch status {
         case 200:
-            print(decodedData.data)
-            return .success(ProductService.productDataData) //배열 안에 있는거 어케 가져오지
+            print(decodedData)
+            return .success(decodedData) //배열 안에 있는거 어케 가져오지
         case 500:
             return .serverErr
         default:
