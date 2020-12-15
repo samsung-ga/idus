@@ -6,19 +6,21 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CraftViewController: UIViewController {
 
-    var product: [String] = ["시즌 할인 무화과 무화과 왕 큰 컵케이크", "시즌 할인 무화과 무화과 왕 큰 컵케이크","시즌 할인 무화과 무화과 왕 큰 컵케이크", "시즌 할인 무화과 무화과 왕 큰 컵케이크","시즌 할인 무화과 무화과 왕 큰 컵케이크","시즌 할인 무화과 무화과 왕 큰 컵케이크"]
-    var imageName: [String] = ["mainImgProduct1","mainImgProduct2","mainImgProduct3","mainImgProduct4","mainImgProduct5","mainImgProduct6"]
-    var category: [String] = ["디저트","핸드폰케이스","비누","디저트","비누","디저트"]
-    var seller: [String] = ["홍길동","홍길동","홍길동","홍길동","홍길동","홍길동"]
-    var discount: [Int] = [58,58,58,58,58,58]
-    var price: [Int] = [5000,5000,5000,5000,5000,5000]
-    var rank: [Int] = [1,2,3,4,5,6]
-
+    
+    var product: [String] = []
+    var imageName: [String] = []
+    var category: [String] = []
+    var seller: [String] = []
+    var discount: [Int] = []
+    var price : [Int] = []
+    var rank : [Int] = []
+    var productData = ""
+    
     @IBOutlet weak var mainScrollView: UIScrollView!
-    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var idusCollectionView: UICollectionView!
 
     @IBOutlet weak var upperBtnSet: UIStackView!
@@ -34,6 +36,8 @@ class CraftViewController: UIViewController {
     @IBOutlet weak var storyView: UIView!
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var popMakerView: UIView!
+    
+    @IBOutlet var bannerImageView: UIImageView!
 
     //Center Btn Set
     @IBOutlet weak var popCraftBtn: UIButton!
@@ -45,19 +49,36 @@ class CraftViewController: UIViewController {
         super.viewDidLoad()
         idusCollectionView.delegate = self
         idusCollectionView.dataSource = self
-
+        ProductService.shared.Product(craft: self)
+        BannerService.shared.Banner(craft: self)
     }
     override func viewDidAppear(_ animated: Bool) {
         setHeight()
         setBtns()
-        setProportion()
+        
+    }
+    func setProduct() {
+        print("ㅡ")
+        print(ProductService.productDataData)
+        print("ㅡ")
+    }
+    func setBanner(){
+        let url = URL(string: BannerService.bannerUri)
+        //        guard let bannerUri = try? Data(contentsOf: url!) else {
+        //            print("error_banner")
+        //            return
+        //        }
+        //bannerImageView.image = UIImage(data: bannerUri)
+        bannerImageView.kf.setImage(with: url)
+        //kingfisher를 사용하면 이미지를 캐싱하여 재접근 할 시에 이미지 로딩 시간을 다량으로 줄여준다.
     }
 
+  
     func setHeight() {
         //collectionViewHeight?.constant = CGFloat(Float(300 * (product.count/2)))
-        collectionViewHeight?.constant = idusCollectionView.contentSize.height
+        //collectionViewHeight?.constant = idusCollectionView.contentSize.height
     }
-
+    
     func setBtns() {
         //upper Btn set
         homeBtn.setTitleColor(UIColor(named: "reddish"), for: .normal)
@@ -97,12 +118,10 @@ class CraftViewController: UIViewController {
         lastestBtn.setTitleColor(UIColor.black, for: .normal)
         popReviewBtn.setTitleColor(UIColor.black, for: .normal)
         recomMakerBtn.setTitleColor(UIColor.black, for: .normal)
-
+        
     }
 
-    func setProportion() {
-        //homeBtn.frame = CGRect(x: 20, y:90, width: (61/355) * upperBtnSet.frame.width, height: upperBtnSet.frame.height)
-    }
+  
     @IBAction func homeBtnTouch(_ sender: Any) {
         homeView.backgroundColor = UIColor(named: "reddish")
         storyView.backgroundColor = UIColor(named: "White")
@@ -201,6 +220,7 @@ class CraftViewController: UIViewController {
         popReviewBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoR00", size: 14)
         recomMakerBtn.titleLabel?.font = UIFont(name: "AppleSDGothicNeoR00", size: 14)
 
+      
         popCraftBtn.setTitleColor(UIColor.black, for: .normal)
         lastestBtn.setTitleColor(UIColor(named: "white"), for: .normal)
         popReviewBtn.setTitleColor(UIColor.black, for: .normal)
@@ -242,7 +262,10 @@ class CraftViewController: UIViewController {
     }
 }
 
-extension CraftViewController: UICollectionViewDelegateFlowLayout {
+
+
+extension CraftViewController:UICollectionViewDelegateFlowLayout{
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: (collectionView.frame.size.width/2-16), height: 320)
     }
@@ -260,27 +283,29 @@ extension CraftViewController: UICollectionViewDataSource {
         guard let cell = idusCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
             return UICollectionViewCell() }
 
-                cell.setImage(imageName: imageName[indexPath.item])
-                cell.setNumberofLines()
-                cell.rankLabel.text = String(rank[indexPath.item])
-                cell.cateLabel.text = category[indexPath.item]
-                cell.cateLabel.layer.cornerRadius = 5
-                cell.nameLabel.lineBreakMode = .byWordWrapping
-                cell.nameLabel.numberOfLines = 2
+      
+        cell.setImage(imageName: imageName[indexPath.item])
+        cell.setNumberofLines()
+        cell.rankLabel.text = String(rank[indexPath.item])
+        cell.cateLabel.text = category[indexPath.item]
+        cell.cateLabel.layer.cornerRadius = 5
+        cell.nameLabel.lineBreakMode = .byWordWrapping
+        cell.nameLabel.numberOfLines = 2
+        
+        if cell.cateLabel.text == category[0]{
+            cell.cateLabel.backgroundColor = UIColor(named: "lightLavender")
+        } else if cell.cateLabel.text == category[1]{
+            cell.cateLabel.backgroundColor = UIColor(named: "lightKhaki")
+        } else if cell.cateLabel.text == category[2]{
+            cell.cateLabel.backgroundColor = UIColor(named: "lightPeriwinkle")
+        }
+        
+        cell.nameLabel.text = product[indexPath.item]
+        cell.nameLabel.lineBreakMode = .byTruncatingTail
+        cell.sellerLabel.text = seller[indexPath.item]
+        cell.discountLabel.text = String(discount[indexPath.item]) + "%"
+        cell.priceLabel.text = String(price[indexPath.item]) + "원"
 
-                if cell.cateLabel.text == category[0] {
-                    cell.cateLabel.backgroundColor = UIColor(named: "lightLavender")
-                } else if cell.cateLabel.text == category[1] {
-                    cell.cateLabel.backgroundColor = UIColor(named: "lightKhaki")
-                } else if cell.cateLabel.text == category[2] {
-                    cell.cateLabel.backgroundColor = UIColor(named: "lightPeriwinkle")
-                }
-
-                cell.nameLabel.text = product[indexPath.item]
-                cell.nameLabel.lineBreakMode = .byTruncatingTail
-                cell.sellerLabel.text = seller[indexPath.item]
-                cell.discountLabel.text = String(discount[indexPath.item]) + "%"
-                cell.priceLabel.text = String(price[indexPath.item]) + "원"
         return cell
 
     }
