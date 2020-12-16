@@ -43,7 +43,7 @@ class MyPageViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
         setTableViewHeight()
     }
 
@@ -123,6 +123,8 @@ extension MyPageViewController: UIScrollViewDelegate {
 extension MyPageViewController {
     
     func getProfile() {
+        ProfileService.shared.getProfile(craft: self)
+        
 //        ProfileService.shared.getProfile()
 //        {
 //            (networkResult) -> (Void) in

@@ -42,6 +42,7 @@ struct ProfileService{
         }
         switch status {
         case 200:
+            print("-----------\n",decodedData)
             return .success(decodedData.data)
         case 400..<500:
             return .requestErr(decodedData.message)
