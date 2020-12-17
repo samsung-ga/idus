@@ -49,7 +49,7 @@ class CraftViewController: UIViewController {
         super.viewDidLoad()
         idusCollectionView.delegate = self
         idusCollectionView.dataSource = self
-        ProductService.shared.Product(craft: self)
+        ProductService.shared.Product()
         BannerService.shared.Banner(craft: self)
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -59,7 +59,7 @@ class CraftViewController: UIViewController {
     }
     func setProduct() {
         print("ㅡ")
-        print(ProductService.productDataData)
+
         print("ㅡ")
     }
     func setBanner(){
