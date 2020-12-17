@@ -9,7 +9,6 @@ import UIKit
 import Kingfisher
 
 class CraftViewController: UIViewController {
-
     
     var product: [String] = []
     var imageName: [String] = []
@@ -20,9 +19,10 @@ class CraftViewController: UIViewController {
     var rank : [Int] = []
     var productData = ""
     
+    //{"image_url":"https://sopt-27-kimun.s3.ap-northeast-2.amazonaws.com/images/origin/1607172551376.png","tag":"디저트","name":"시즌 할인 무화과 무화과 왕 큰 컵케이크","seller":"김다혜","price":8000,"rating":4,"review":60}
+    
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var idusCollectionView: UICollectionView!
-
     @IBOutlet weak var upperBtnSet: UIStackView!
 
     //upper Btn Set
@@ -49,19 +49,20 @@ class CraftViewController: UIViewController {
         super.viewDidLoad()
         idusCollectionView.delegate = self
         idusCollectionView.dataSource = self
-        ProductService.shared.Product()
+        ProductService.shared.getProductData(craft:self)
         BannerService.shared.Banner(craft: self)
     }
     override func viewDidAppear(_ animated: Bool) {
         setHeight()
         setBtns()
-        
     }
+    
     func setProduct() {
         print("ㅡ")
-
-        print("ㅡ")
-    }
+        //print(productArray)
+        let productArray = ProductService.productDataModel
+        print("이건 그냥 Array",productArray)
+        }
     func setBanner(){
         let url = URL(string: BannerService.bannerUri)
         //        guard let bannerUri = try? Data(contentsOf: url!) else {
@@ -261,9 +262,6 @@ class CraftViewController: UIViewController {
         recomMakerBtn.setTitleColor(UIColor(named: "white"), for: .normal)
     }
 }
-
-
-
 extension CraftViewController:UICollectionViewDelegateFlowLayout{
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -282,8 +280,9 @@ extension CraftViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = idusCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as? ProductCell else {
             return UICollectionViewCell() }
-
-      
+        
+        //let url = URL(string: )
+        
         cell.setImage(imageName: imageName[indexPath.item])
         cell.setNumberofLines()
         cell.rankLabel.text = String(rank[indexPath.item])
