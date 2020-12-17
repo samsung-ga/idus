@@ -10,8 +10,10 @@ import Alamofire
 
 struct ProfileService{
     static let shared = ProfileService()
-    
-    func getProfile(craft: MyPageViewController) {
+    static var imgUrl = ""
+    static var badgeUrl = ""
+
+    func getProfile(completion: @escaping (NetworkResult<Any>) -> (Void)) {
         let url = APIConstants.profileURL
         let header: HTTPHeaders = ["Content-Type" : "application/json"]
         
@@ -19,6 +21,7 @@ struct ProfileService{
         
         dataRequest.responseData{ (response) in switch response.result {
         case .success:
+            
             guard let statusCode = response.response?.statusCode else {
                 return
             }
@@ -27,11 +30,11 @@ struct ProfileService{
             }
             
             judgeProfileData(status: statusCode, data: data)
-//            completion(judgeProfileData(status: statusCode, data: data))
+            completion(judgeProfileData(status: statusCode, data: data))
             
         case .failure(let err):
             print(err)
-//            completion(.networkFail)
+            completion(.networkFail)
         }
         }
     }
@@ -42,7 +45,11 @@ struct ProfileService{
         }
         switch status {
         case 200:
+            ProfileService.imgUrl = decodedData.data.profileImageURL
+            ProfileService.badgeUrl = decodedData.data.badgeImageURL
+
             print("-----------\n",decodedData)
+            
             return .success(decodedData.data)
         case 400..<500:
             return .requestErr(decodedData.message)

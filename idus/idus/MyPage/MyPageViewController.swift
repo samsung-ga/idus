@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 extension UIView {
 
@@ -19,7 +20,7 @@ extension UIView {
 }
 
 class MyPageViewController: UIViewController {
-    var ProfileDataModel: ProfileData?
+    var ProfileDataModel: Profile?
 
     // UIViewComponets
     @IBOutlet weak var scrollView: UIScrollView!
@@ -36,6 +37,11 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var floatingButton: UIButton!
 
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var pointLabel: UILabel!
+    @IBOutlet weak var couponLabel: UILabel!
+    @IBOutlet weak var levelImageView: UIImageView!
+    
     // statics
     let titles: [String] = ["친구초대", "이벤트", "공지사항", "고객센터", "About idus"]
     let backgroundViewHeight: CGFloat = 249.0
@@ -51,6 +57,29 @@ class MyPageViewController: UIViewController {
         super.viewDidDisappear(animated)
 
     }
+    
+    func setProfile() {
+        let ImgURL = String(ProfileDataModel!.profileImageURL)
+        let badgeURL = String(ProfileDataModel!.badgeImageURL)
+        levelLabel.text = ProfileDataModel?.level
+        pointLabel.text = String(ProfileDataModel!.point) + "P"
+        couponLabel.text = String(ProfileDataModel!.coupon)
+       
+        let imgUrl = URL(string: ProfileService.imgUrl)
+        let badgeUrl = URL(string: ProfileService.badgeUrl)
+
+        profileImageView.kf.setImage(with: imgUrl)
+        levelImageView.kf.setImage(with: badgeUrl)
+
+//            = UIImage.init(named: "mypageImgProfile")
+        
+        print("--------didididididi-------")
+        print(ImgURL)
+        print(badgeURL)
+        print("--------didididididi-------")
+
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +93,7 @@ class MyPageViewController: UIViewController {
 
         backgroundView.image = UIImage(named: "mypageBgRed")
         bannerView.image = UIImage(named: "mypageImgAd")
-        profileImageView.image = UIImage.init(named: "mypageImgProfile")
+  
         floatingButton.setImage(UIImage(named: "mainBtnCart"), for: .normal)
 
         highlightView.backgroundColor = UIColor(named: "paleSalmon")
@@ -123,8 +152,31 @@ extension MyPageViewController: UIScrollViewDelegate {
 extension MyPageViewController {
     
     func getProfile() {
-        ProfileService.shared.getProfile(craft: self)
+//        ProfileService.shared.getProfile(craft: self)
         
+        
+        ProfileService.shared.getProfile() { (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let response = data as? Profile {
+                    self.ProfileDataModel = response
+                    
+                    self.setProfile()
+                    
+                    print("호우호우",self.ProfileDataModel)
+                }
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+            
 //        ProfileService.shared.getProfile()
 //        {
 //            (networkResult) -> (Void) in
@@ -147,9 +199,12 @@ extension MyPageViewController {
 //                }
 //                }
             }
+    
+  
         }
     
 
 
 
 
+}
