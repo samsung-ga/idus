@@ -8,11 +8,10 @@
 import Foundation
 import Alamofire
 
-let dummy  = ["a","b","c"]
 struct ProductService{
     static let shared = ProductService()
-    static var productDataData = [String: Any]()
-    func Product(){
+    static var productDataModel: [Pdata]?
+    func getProductData(craft: CraftViewController){
         let url = APIConstants.productURL
         let header: HTTPHeaders = ["Content-Type" : "application/json"]
         let dataRequest = AF.request(url, method: .get, encoding: JSONEncoding.default, headers: header)
@@ -25,7 +24,8 @@ struct ProductService{
                 guard let data = response.value else {
                     return
                 }
-                parsingProduct(status: statusCode, data: data) // 데이터를 다 못받아와서그러나
+                judgeProductData(status: statusCode, data: data) // 데이터를 다 못받아와서그러나
+                craft.setProduct()
             case .failure(let err):
                 print("통신실패")
                 print(err)
@@ -33,24 +33,22 @@ struct ProductService{
             
         }
     }
-    private func parsingProduct(status: Int, data: Data) -> Array<Any> {
-        let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(ProductData.self, from: data) else {
-            return dummy}
-        switch status {
-        case 200:
-            let countArray = decodedData.data.count
-            print(countArray)//Pdata를 array로 인식하고 있는데.. 흠
-            for i in 0..<(decodedData.data.count-1){
-               //ProductService.productDataData = decodedData.data
+    private func judgeProductData(status: Int, data: Data) -> NetworkResult<Any> {
+            let decoder = JSONDecoder()
+            guard let decodedData = try? decoder.decode(ProductData.self, from: data) else {
+                return .pathErr
             }
-            //return ProductService.productDataData //배열 안에 있는거 어케 가져오지
-            return dummy
-        case 500:
-            return dummy
-        default:
-            return dummy
-        }
+            switch status {
+            case 200:
+                print("ㅅ어공")
+                ProductService.productDataModel = decodedData.data
+                return .success(decodedData.data)
+            case 400..<500:
+                return .requestErr(decodedData.message)
+            case 500:
+                return .serverErr
+            default:
+                return .networkFail
+            }
         }
     }
-
