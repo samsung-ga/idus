@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2gT-CG-20T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2gT-CG-20T">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1525"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xgD-8f-4ia">
-                                                <rect key="frame" x="0.0" y="-4" width="414" height="249"/>
+                                                <rect key="frame" x="0.0" y="-2" width="414" height="249"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="249" id="tnf-55-pgQ"/>
                                                 </constraints>
@@ -63,8 +63,8 @@
                                                                         <color key="textColor" red="0.57647058823529407" green="0.57647058823529407" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000P" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2C-JO-1yQ">
-                                                                        <rect key="frame" x="20" y="35" width="52.5" height="22"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2C-JO-1yQ">
+                                                                        <rect key="frame" x="20" y="35" width="32.5" height="22"/>
                                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                                         <color key="textColor" name="reddish"/>
                                                                         <nil key="highlightedColor"/>
@@ -95,8 +95,8 @@
                                                                         <color key="textColor" red="0.57647058819999997" green="0.57647058819999997" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CH-DT-ugd">
-                                                                        <rect key="frame" x="20" y="35" width="10" height="22"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CH-DT-ugd">
+                                                                        <rect key="frame" x="20" y="35" width="32.5" height="22"/>
                                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                                                         <color key="textColor" name="reddish"/>
                                                                         <nil key="highlightedColor"/>
@@ -179,8 +179,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddK-QN-96q">
                                                         <rect key="frame" x="297" y="29.5" width="69" height="25"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아기손" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-LI-tbX">
-                                                                <rect key="frame" x="24" y="3" width="34" height="19"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-LI-tbX">
+                                                                <rect key="frame" x="36" y="3" width="22" height="19"/>
                                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -195,7 +195,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="gaS-LI-tbX" secondAttribute="trailing" constant="11" id="fBR-mO-Zyh"/>
                                                         </constraints>
                                                     </view>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mypageImgLevel" translatesAutoresizingMaskIntoConstraints="NO" id="wLF-i3-IS1">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wLF-i3-IS1">
                                                         <rect key="frame" x="279" y="26" width="37" height="32.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="37" id="hds-KP-Jpb"/>
@@ -326,8 +326,12 @@
                         <outlet property="badgeView" destination="ddK-QN-96q" id="h5h-rE-jVQ"/>
                         <outlet property="bannerView" destination="Ijc-YI-ySc" id="ING-64-rL0"/>
                         <outlet property="containerView" destination="LPv-lV-icm" id="tkG-qr-6if"/>
+                        <outlet property="couponLabel" destination="0CH-DT-ugd" id="lmd-Ya-Cza"/>
                         <outlet property="floatingButton" destination="HoF-uh-dYd" id="WYR-ya-d0k"/>
                         <outlet property="highlightView" destination="xO8-2U-hk0" id="XNI-PV-vnf"/>
+                        <outlet property="levelImageView" destination="wLF-i3-IS1" id="uYT-wE-CZW"/>
+                        <outlet property="levelLabel" destination="gaS-LI-tbX" id="32h-gY-3Da"/>
+                        <outlet property="pointLabel" destination="Y2C-JO-1yQ" id="dvr-YA-dCF"/>
                         <outlet property="profileImageView" destination="tTr-cv-TyD" id="cdO-Ed-Eac"/>
                         <outlet property="profileView" destination="Bg7-xY-Xt2" id="7t1-fe-ESF"/>
                         <outlet property="scrollView" destination="Aqm-eJ-0S7" id="VoM-zS-icT"/>
@@ -352,7 +356,6 @@
         <image name="mypageBtnSeller" width="185" height="112"/>
         <image name="mypageBtnVip" width="70" height="66"/>
         <image name="mypageIcNaviMySelected" width="19" height="19"/>
-        <image name="mypageImgLevel" width="33" height="33"/>
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
