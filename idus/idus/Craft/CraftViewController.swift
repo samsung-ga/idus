@@ -9,7 +9,9 @@ import UIKit
 import Kingfisher
 
 class CraftViewController: UIViewController {
-    
+    var proDictvar:[String:Any]?
+    var productArrr: [String] = []
+    var dummy = ["a","a","a"]
     var product: [String] = []
     var imageName: [String] = []
     var category: [String] = []
@@ -55,13 +57,18 @@ class CraftViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         setHeight()
         setBtns()
+        print(dummy)
+    }
+    
+    class productClass{
+        var imageURL = "", tag = "", name = "", seller = ""
+        let price = 0, rating = 0, review: Int = 0
     }
     
     func setProduct() {
         print("ㅡ")
-        //print(productArray)
         let productArray = ProductService.productDataModel
-        print("이건 그냥 Array",productArray)
+        print("이건 그냥 PdataArray",productArray?[0])
         }
     func setBanner(){
         let url = URL(string: BannerService.bannerUri)
